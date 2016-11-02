@@ -12,3 +12,6 @@ class Vector:
 
     def __add__(self, other):
         return Vector(other.x + self.x, other.y+self.y, other.z+self.y)
+
+    def __mul__(self,scalar):
+        return Vector(scalar * self.x, scalar * self.y, scalar * self.z)
