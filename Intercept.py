@@ -21,4 +21,10 @@ class target:
         self.grav = (G*M*self.m)/(self.alt + EARTH_RADIUS)
 
     def updatepos(self):
-        Fnet = self.thrust +
+        dt = 15          # default delta time of 15 sec
+        Fnet = self.thrust + self.grav
+        self.pos = self.pos + (Fnet*dt)/self.m
+
+    def updatepos(self,dt):
+        Fnet = self.thrust + self.grav
+        self.pos = self.pos + (Fnet*dt)/self.m
